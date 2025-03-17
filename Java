@@ -1,0 +1,42 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const noticiasContainer = document.getElementById("noticias-container");
+
+    const noticias = [
+        {
+            titulo: "Campinas avança na vacinação contra a gripe",
+            conteudo: "A cidade de Campinas segue avançando na campanha de vacinação...",
+            imagem: "imagens/vacina.jpg"
+        },
+        {
+            titulo: "Novo parque será inaugurado na cidade",
+            conteudo: "A Prefeitura de Campinas anunciou a inauguração de um novo parque...",
+            imagem: "imagens/parque.jpg"
+        },
+        {
+            titulo: "Futebol: Guarani vence clássico contra Ponte Preta",
+            conteudo: "O Guarani venceu a Ponte Preta por 2 a 1 no clássico campineiro...",
+            imagem: "imagens/futebol.jpg"
+        }
+    ];
+
+    noticias.forEach(noticia => {
+        let div = document.createElement("div");
+        div.classList.add("noticia");
+
+        let titulo = document.createElement("h2");
+        titulo.textContent = noticia.titulo;
+
+        let conteudo = document.createElement("p");
+        conteudo.textContent = noticia.conteudo;
+
+        let imagem = document.createElement("img");
+        imagem.src = noticia.imagem;
+        imagem.alt = noticia.titulo;
+        imagem.style.width = "100%";
+
+        div.appendChild(imagem);
+        div.appendChild(titulo);
+        div.appendChild(conteudo);
+        noticiasContainer.appendChild(div);
+    });
+});
